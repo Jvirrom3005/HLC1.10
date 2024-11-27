@@ -1,20 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Numero alto o bajo
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<div class="ion-padding">
+  <ion-input type="number" min="1" max="500" [(ngModel)]="num" placeholder="Introducen un numero del 0 al 36"> 
+  </ion-input>
+  <p>{{ mayorMenor }}</p>
+  <ion-button expand="block" (click)="compruebaNumero()">Apuesta</ion-button>
+  <p>Tu saldo actual es de {{ saldo }}  €</p>
+  <p>Una jugada te cuesta 100€ y si ganas consigues 200€ y si aciertas el numero ganas 300€</p>
+  <div *ngIf="mostrarRuleta" class="ruleta-container">
+  <ion-img src="assets\ruleta.gif"></ion-img>
   </div>
+</div>
+
+  
 </ion-content>
